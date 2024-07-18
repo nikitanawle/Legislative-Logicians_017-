@@ -2,10 +2,230 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>My Programming Language</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+        }
+        header {
+            background-color: #4CAF50;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            border-bottom: 5px solid #388E3C;
+        }
+        nav {
+            display: flex;
+            justify-content: center;
+            background: linear-gradient(90deg, #4CAF50, #388E3C);
+            padding: 10px;
+            border-radius: 10px;
+            margin: 10px auto;
+            width: 90%;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        nav a {
+            color: white;
+            padding: 14px 20px;
+            text-decoration: none;
+            text-align: center;
+            margin: 0 10px;
+            border-radius: 5px;
+            transition: background-color 0.3s, color 0.3s;
+        }
+        nav a:hover {
+            background-color: #fff;
+            color: #4CAF50;
+        }
+        section {
+            padding: 20px;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .features, .documentation, .contact, .ide {
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 5px;
+            margin-top: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border: 1px solid #ddd;
+        }
+        h2 {
+            color: #333;
+            border-bottom: 3px solid #4CAF50;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+        ul {
+            list-style: disc inside;
+        }
+        ul li {
+            margin-bottom: 10px;
+        }
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+            border-top: 5px solid #222;
+        }
+        pre {
+            background-color: #f4f4f4;
+            padding: 10px;
+            border-left: 5px solid #4CAF50;
+            overflow: auto;
+        }
+        a {
+            color: #4CAF50;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        .contact p, .contact a {
+            margin: 5px 0;
+        }
+    </style>
 </head>
 <body>
-    
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const body = document.body;
+
+            // Create header
+            const header = document.createElement('header');
+            header.innerHTML = `
+                <h1>Welcome to CodeTech</h1>
+                <p>A new language designed to solve unique problems in the XYZ community.</p>
+            `;
+            body.appendChild(header);
+
+            // Create navigation
+            const nav = document.createElement('nav');
+            nav.innerHTML = `
+                <a href="#features">Features</a>
+                <a href="syntax.html" target="_blank">Language Syntax</a>
+                <a href="#ide">IDE</a>
+                <a href="#documentation">Documentation</a>
+                <a href="#contact">Contact</a>
+            `;
+            body.appendChild(nav);
+
+            // Create container
+            const container = document.createElement('section');
+            container.className = 'container';
+            body.appendChild(container);
+
+            // Create features section
+            const features = document.createElement('div');
+            features.id = 'features';
+            features.className = 'features';
+            features.innerHTML = `
+                <h2>Features</h2>
+                <ul>
+                    <li>Clear and consistent syntax</li>
+                    <li>Support for variables, data types, conditionals, loops, and functions</li>
+                    <li>Integrated Development Environment (IDE) with syntax highlighting, code completion, and error highlighting</li>
+                    <li>Comprehensive documentation and tutorials</li>
+                </ul>
+            `;
+            container.appendChild(features);
+
+            // Create syntax section
+            const syntax = document.createElement('div');
+            syntax.id = 'syntax';
+            syntax.className = 'features';
+            syntax.innerHTML = `
+                <h2>Language Syntax</h2>
+                <pre><code>
+// Variable declaration
+let x: int = 10;
+let name: string = "Alice";
+
+// Conditional statements
+if x > 5 {
+    print("x is greater than 5");
+} else {
+    print("x is less than or equal to 5");
+}
+
+// Loops
+for i in 1..10 {
+    print(i);
+}
+
+while x > 0 {
+    x = x - 1;
+}
+
+// Functions
+function greet(name: string): string {
+    return "Hello, " + name;
+}
+
+print(greet("Bob"));
+                </code></pre>
+            `;
+            container.appendChild(syntax);
+
+            // Create IDE section
+            const ide = document.createElement('div');
+            ide.id = 'ide';
+            ide.className = 'ide';
+            ide.innerHTML = `
+                <h2>Integrated Development Environment (IDE)</h2>
+                <p>Our IDE offers a user-friendly interface for writing, editing, and executing code in your language. Key features include:</p>
+                <ul>
+                    <li>Syntax highlighting</li>
+                    <li>Code completion</li>
+                    <li>Error highlighting</li>
+                    <li>Console for executing code and displaying output/errors</li>
+                </ul>
+                <a href="ide.html">Try the IDE</a>
+            `;
+            container.appendChild(ide);
+
+            // Create documentation section
+            const documentation = document.createElement('div');
+            documentation.id = 'documentation';
+            documentation.className = 'documentation';
+            documentation.innerHTML = `
+                <h2>Documentation</h2>
+                <p>Our comprehensive documentation includes syntax rules, usage examples, and a user guide for the IDE. Start learning now:</p>
+                <ul>
+                    <li><a href="syntax.html">Language Syntax</a></li>
+                    <li><a href="ide.html">IDE User Guide</a></li>
+                    <li><a href="documentation.html">Full Documentation</a></li>
+                </ul>
+            `;
+            container.appendChild(documentation);
+
+            // Create contact section
+            const contact = document.createElement('div');
+            contact.id = 'contact';
+            contact.className = 'contact';
+            contact.innerHTML = `
+                <h2>Contact Us</h2>
+                <p>If you have any questions or feedback, please reach out to us:</p>
+                <p>Email: <a href="mailto:support@example.com">support@example.com</a></p>
+            `;
+            container.appendChild(contact);
+
+            // Create footer
+            const footer = document.createElement('footer');
+            footer.innerHTML = `
+                <p>&copy; 2024 CodeTech. All rights reserved.</p>
+            `;
+            body.appendChild(footer);
+        });
+    </script>
 </body>
 </html>
